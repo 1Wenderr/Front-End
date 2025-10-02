@@ -51,6 +51,24 @@ section{
   border-bottom: 1px solid #ffe100;
 }
 
+.btn-padrao{
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffe100;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-padrao:hover {
+  background-color: #d0d000;
+}
+
 .btn-login {
   display: flex;
   align-items: normal;
@@ -229,4 +247,42 @@ section{
     align-items: center;
     text-align: center;
   }
+}
+
+.section-titulo{
+  color: #ffe100;
+  font-size: 1.563rem;
+}
+
+.section-categoria{
+  font-size: 2.1875rem;
+}
+
+#produtos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+
+#CasaIn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.CasaIn-cards{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  gap: 18px;
+  width: 25%;
+  padding: 20px;
+  background-color: #0b263f;
+  box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
 }
