@@ -14,6 +14,11 @@ body {
 header{
   width: 100%;
   padding: 28px 5%;
+  position: sticky;
+  top: 0;
+  background-color: #0a2239;
+  z-index: 3;
+
 }
 
 section{
@@ -22,16 +27,18 @@ section{
 
 #navbar{
   width: 100%;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 #nav_logo{
-  font-size: 6rem;
+  font-size: 5rem;
   color: #ffffff;
   font-family: 'Calistoga', cursive;
   cursor: pointer;
+
 }
 
 #nav_list{
@@ -142,6 +149,10 @@ section{
     list-style: none;
     text-align: center;
 }
+
+  .carrossel{
+    display: none;
+  }
 }
 
 #home{
@@ -179,6 +190,52 @@ section{
 #cta_buttons a {
     text-decoration: none;
     color: #ffffff;
+}
+
+.carrossel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin-top: -200px;
+  margin-bottom: -150px;
+}
+
+.carrossel-slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carrossel-slide {
+  min-width: 100%;
+  display: none;
+}
+
+.carrossel-slide.active {
+  display: block;
+}
+
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  background-color: #f4f4f4;
+  border: none;
+  padding: 12px;
+  color: #0a2239;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carrossel-btn.prev {
+  left: 0px;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.carrossel-btn.next {
+  right: 0px;
+  border-radius: 20px 0px 0px 20px;
 }
 
 .social-media-buttons {
@@ -273,9 +330,19 @@ section{
   justify-content: center;
   gap: 24px;
   margin-top: 32px;
+  margin-bottom: 50px;
 }
 
-.CasaIn-cards{
+#PlacasSol{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+  margin-bottom: 50px;
+}
+
+.cards{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -283,6 +350,576 @@ section{
   gap: 18px;
   width: 25%;
   padding: 20px;
-  background-color: #0b263f;
+  background-color: #0e2e4d;
   box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.desconto{
+  position: absolute;
+  background-color: #ff4d4f; 
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  width: 70px;
+  height: 30px;
+  right: 0;
+  top: 0;
+  border-radius: 0 0 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 6px rgba(255, 77, 79, 0.6);
+  z-index: 2;
+  user-select: none;
+}
+
+.preco{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (max-width: 1170px){
+  #CasaIn{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #PlacasSol{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cards{
+    width: calc(50% - 18px);
+  }
+}
+
+@media screen and (max-width: 600px){
+  .cards{
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+/* ***************FOOTER******************* */
+
+
+.footer {
+  background-color: #133f68;
+}
+
+.container-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2.5rem 1.5rem;
+  background-color: #0a2239;
+}
+
+.menu-footer {
+  display: grid;
+  /* 3 equal columns + flexible newsletter column */
+  grid-template-columns: repeat(3, minmax(180px, 1fr)) minmax(220px, 420px);
+  gap: 2rem;
+  align-items: start;
+}
+
+.title-footer {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.contact-info,
+.information,
+.my-account,
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: 'Inter', sans-serif;
+  align-items: flex-start;
+}
+
+.contact-info ul,
+.information ul,
+.my-account ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-info ul li,
+.information ul li,
+.my-account ul li {
+  list-style: none;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.information ul li a,
+.my-account ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+}
+
+.information ul li a:hover,
+.my-account ul li a:hover {
+  color: rgb(154, 163, 169);
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-icons span {
+  border-radius: 50%;
+  width: 2.6rem;
+  height: 2.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons span i {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter {
+  background-color: #00acee;
+}
+
+.youtube {
+  background-color: #c4302b;
+}
+
+.pinterest {
+  background-color: #c8232c;
+}
+
+.instagram {
+  background: linear-gradient(#405de6,
+      #833ab4,
+      #c13584,
+      #e1306c,
+      #fd1d1d,
+      #f56040,
+      #fcaf45);
+}
+
+
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: 1px solid #787979;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.copyright p {
+  font-weight: 400;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Make payment image responsive inside copyright */
+.copyright img {
+  max-width: 220px;
+  width: 40%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive tweaks for newsletter input/button */
+.inscricao-email {
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Newsletter inline on larger screens */
+@media (min-width: 900px) {
+  .newsletter-form form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .inscricao-email {
+    border-radius: 50px;
+    padding: 12px 18px;
+    background: #ffffff;
+    color: #0a2239;
+    width: 320px;
+    max-width: 100%;
+  }
+
+  .juntarBI {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .enviarEmail {
+    margin-left: 8px;
+  }
+}
+
+/* Class for payment image (used in HTML) */
+.payment-img {
+  max-width: 220px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+/* ***************MEDIA QUERIES -- 768px******************* */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+
+  .hero {
+    padding: 2rem;
+  }
+
+  .customer-support {
+    display: none;
+  }
+
+  .content-shopping-cart {
+    display: none;
+  }
+
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .navbar .fa-bars {
+    display: block;
+    color: #fff;
+    font-size: 3rem;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .content-banner {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 25rem 0;
+  }
+
+  .container-features {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem 2rem;
+  }
+
+  .card-feature {
+    padding: 2rem;
+  }
+
+  .heading-1 {
+    font-size: 2.4rem;
+  }
+
+  .card-category {
+    height: 12rem;
+  }
+
+  .card-category p {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .card-category span {
+    font-size: 1.4rem;
+  }
+
+  .container-options {
+    align-items: center;
+  }
+
+  .container-options span {
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+
+  .container-products {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  }
+
+  .gallery {
+    grid-template-rows: repeat(2, 15rem);
+  }
+
+  .container-blogs {
+    overflow: hidden;
+    grid-template-columns: 1fr 1fr;
+
+    height: 52rem;
+  }
+
+  .menu-footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .copyright {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+
+/******************MEDIA QUERIES -- 468px ***************** */
+
+@media (max-width: 468px) {
+  html {
+    font-size: 42.5%;
+  }
+
+  .content-banner {
+    max-width: 50rem;
+    padding: 22rem 0;
+  }
+
+  .heading-1 {
+    font-size: 2.8rem;
+  }
+
+  .card-feature {
+    flex-direction: column;
+    border-radius: 2rem;
+  }
+
+  .feature-content {
+    align-items: center;
+  }
+
+  .feature-content p {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .feature-content span {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .container-options span {
+    font-size: 1.8rem;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+  }
+
+  .container-products {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1rem;
+  }
+
+  .container-img .discount {
+    font-size: 2rem;
+  }
+
+  .content-card-product h3 {
+    font-size: 2.2rem;
+  }
+
+  .gallery {
+    grid-template-rows: repeat(2, 20rem);
+  }
+
+  .blogs {
+    padding: 2rem;
+  }
+
+  .container-blogs {
+    grid-template-columns: 1fr;
+    height: 75rem;
+  }
+
+  .content-blog h3 {
+    font-size: 2.4rem;
+  }
+
+  .content-blog span {
+    font-size: 1.8rem;
+  }
+
+  .content-blog p {
+    font-size: 2.2rem;
+  }
+
+  .btn-read-more {
+    font-size: 1.8rem;
+  }
+
+  .contact-info ul,
+  .information ul,
+  .my-account ul {
+    display: none;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .menu-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .content p {
+    font-size: 1.6rem;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+
+}
+
+.containerRodape {
+  display: flex;
+  align-items: center;
+  height: 20vh;
+
+
+}
+
+.inscricao-email {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  color: #444;
+  flex: 1;
+  width: 300px;
+}
+
+.juntarBI {
+  background-color: #ffffff;
+  border-radius: 50px;
+  padding: 10px 13px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.enviarEmail {
+  background-color: #2f3a3a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-left: 10px;
+}
+
+.enviarEmail:hover {
+  background-color: #1e2626;
+}
+
+.coluna-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 0;
+  color: #ffffff;
+}
+
+.redes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.DireitosReservados {
+  margin-top: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Additional footer breakpoints */
+@media (max-width: 1024px) {
+  .menu-footer {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
+    grid-auto-rows: auto;
+  }
+
+  .newsletter {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-footer {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contact-info,
+  .information,
+  .my-account,
+  .newsletter {
+    align-items: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .inscricao-email {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 468px) {
+  .container-footer {
+    padding: 1.25rem 1rem;
+    gap: 1.25rem;
+  }
+
+  .copyright p {
+    font-size: 0.85rem;
+  }
+
+  .copyright img {
+    max-width: 180px;
+    width: 60%;
+  }
 }
