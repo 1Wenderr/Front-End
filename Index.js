@@ -63,3 +63,13 @@ prevBtn.addEventListener("click", prevSlide);
 // Troca automática
 setInterval(nextSlide, 5000);
 });
+
+const userLogado = localStorage.getItem("usuario_logado"); // "true" ou null
+
+if (userLogado === "true") {
+  document.getElementById("btn-entrar").style.display = "none";
+  document.getElementById("btn-cadastrar").style.display = "none";
+  document.getElementById("btn-perfil").style.display = "inline-block";
+}
+localStorage.setItem("usuario_logado", "true");
+localStorage.removeItem("usuario_logado");
